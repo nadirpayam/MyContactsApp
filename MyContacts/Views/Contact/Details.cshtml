@@ -1,0 +1,54 @@
+﻿@model MyContacts.Models.Contact
+@{
+    ViewBag.Title = "Contact Details";
+}
+<table class="table table-striped">
+    <tr>
+        <th>
+            Ad
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Soyad
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Email
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Email)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Telefon Numarası
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Kategori
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Category.Name)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Eklenme Tarihi
+        </th>
+        <td>
+            @Model.DateAdded.ToShortDateString()
+        </td>
+    </tr>
+</table>

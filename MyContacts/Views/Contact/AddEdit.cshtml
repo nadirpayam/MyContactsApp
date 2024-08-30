@@ -1,0 +1,36 @@
+﻿@model MyContacts.Models.Contact
+@{
+    ViewBag.Title = ViewBag.Action;
+}
+<form asp-action="AddEdit" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="floatingFirstName" asp-for="FirstName" placeholder="First Name">
+        <label for="floatingFirstName" asp-for="FirstName">Ad</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="floatingLastName" asp-for="LastName" placeholder="Last Name">
+        <label for="floatingLastName" asp-for="LastName">Soyad</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="floatingPhoneNumber" asp-for="PhoneNumber" placeholder="Phone Number">
+        <label for="floatingLastName" asp-for="PhoneNumber">Telefon Numarası</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="floatingEmail" asp-for="Email" placeholder="Email">
+        <label for="floatingEmail" asp-for="Email">Email</label>
+    </div>
+    <div>
+        <select asp-for="CategoryId" class="form-select">
+            <option value="">Kategori</option>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.CategoryId">@category.Name</option>
+            }
+        </select>
+    </div>
+    <input type="hidden" asp-for="ContactId" /> <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+
+</form>
